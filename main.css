@@ -1,0 +1,21 @@
+body{
+    background-color: black;
+}
+.title{
+    margin-top: 75px;
+    color: #810532;
+    text-align: center;
+}
+
+.column {
+    text-align: center;
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+ }
+ .row::after {
+    content: "";
+    clear: both;
+    display: table;
+ }
