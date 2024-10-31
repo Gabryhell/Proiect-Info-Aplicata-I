@@ -1,10 +1,14 @@
+@import url('https://fonts.cdnfonts.com/css/martyric-personal-use-only');
 body{
     background-color: black;
+    user-select: none;
 }
 .title{
     margin-top: 75px;
-    color: #810532;
+    color: #ec891f;
     text-align: center;
+    font-size: 40px;
+    font-family: 'Martyric Personal Use Only', sans-serif;
 }
 
 .column {

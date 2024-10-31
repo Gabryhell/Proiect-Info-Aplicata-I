@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship Game</title>
+    <link rel="stylesheet" href="game3.css">
+</head>
+<body>
+    <h1>Battleship Game</h1>
+
+    <!-- Mode Selection -->
+    <div id="mode-selection">
+        <button onclick="startGame('single')">Single Player</button>
+        <button onclick="startGame('two')">Two Player</button>
+    </div>
+
+    <!-- Play Again / Back Buttons -->
+    <div id="in-game-options">
+        <button onclick="playAgain()">Play Again</button>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <!-- Game Board -->
+    <div id="game-board">
+        <div id="player-board" class="board"></div>
+        <div id="opponent-board" class="board"></div>
+    </div>
+
+    <!-- Score Display -->
+    <div id="score-display">
+        <p>Player Score: <span id="player-score">0</span></p>
+        <p>Opponent Score: <span id="opponent-score">0</span></p>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="game3.js"></script>
+</body>
+</html>
