@@ -5,7 +5,9 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #000000;
+    text-align: center;
+    font-size: xxx-large;
 }
 
 #mode-selection {
@@ -67,4 +69,15 @@ h1 {
 
 #in-game-options{
     display: none;
+}
+
+#in-game-options button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    background: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
 }
