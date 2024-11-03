@@ -9,7 +9,18 @@ h1 {
 }
 
 #mode-selection {
-    margin: 20px;
+    text-align: center;
+}
+
+#mode-selection button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    background: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
 }
 
 #game-board {
