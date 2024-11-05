@@ -1,83 +1,84 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f3f3f3;
-}
-
-h1 {
-    color: #000000;
-    text-align: center;
-    font-size: xxx-large;
-}
-
-#mode-selection {
-    text-align: center;
-}
-
-#mode-selection button {
-    font-size: 20px;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    background: #555;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
-
-#game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f8ff;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  #game-container {
     display: flex;
     justify-content: center;
-    margin: 20px;
-}
-
-.board {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .grid {
     display: grid;
-    grid-template-columns: repeat(10, 30px);
-    grid-template-rows: repeat(10, 30px);
-    gap: 2px;
-    margin: 0 10px;
-}
-
-.cell {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #898989;
-    display: inline-block;
+    grid-template-columns: repeat(10, 40px); /* Default for larger screens */
+    grid-template-rows: repeat(10, 40px);
+    gap: 4px;
+  }
+  
+  .cell {
+    width: 40px;
+    height: 40px;
+    background-color: #87ceeb;
+    border: 1px solid #fff;
     cursor: pointer;
-    box-sizing: border-box;
-}
-
-.cell.hit {
+  }
+  
+  /* Hit and Miss Indicators */
+  .cell.hit {
     background-color: red;
-    border: 1px solid darkred;
-}
-
-.cell.miss {
-    background-color: rgb(0, 0, 0);
-}
-
-#score-display {
-    margin: 20px;
-    font-size: 18px;
-}
-
-.cell.ship {
-    background-color: #4a90e2;
-    border: 2px solid black; 
-}
-
-#in-game-options{
-    display: none;
-}
-
-#in-game-options button {
-    font-size: 20px;
+  }
+  .cell.miss {
+    background-color: #ccc;
+  }
+  
+  #message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  #restart-btn {
+    margin-top: 20px;
     padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    background: #555;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
+    font-size: 1em;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(10, 30px); /* Smaller grid cells */
+      grid-template-rows: repeat(10, 30px);
+    }
+    .cell {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .grid {
+      grid-template-columns: repeat(10, 20px); /* Even smaller for mobile */
+      grid-template-rows: repeat(10, 20px);
+    }
+    .cell {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
