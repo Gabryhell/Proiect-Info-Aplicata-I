@@ -1,83 +1,101 @@
-const player1Board = document.querySelector("#player1-board .grid");
-const player2Board = document.querySelector("#player2-board .grid");
-const message = document.getElementById("message");
-const restartBtn = document.getElementById("restart-btn");
+// Initialize grids and players' data
+const player1Board = document.getElementById('player1-board');
+const player2Board = document.getElementById('player2-board');
+const resetButton = document.getElementById('reset-button');
 
+const gridSize = 10;
+let currentPlayer = 1;
 let player1Ships = [];
 let player2Ships = [];
-let currentPlayer = 1;
-let gameOver = false;
 
-const GRID_SIZE = 100;  // 10x10 grid
-const SHIP_COUNT = 5;   // 5 ships per player
-
-// Initialize game
-function initializeGame() {
-  player1Ships = generateRandomShips();
-  player2Ships = generateRandomShips();
-  currentPlayer = 1;
-  gameOver = false;
-  message.textContent = "Player 1's turn!";
-  createBoard(player1Board);
-  createBoard(player2Board);
-}
-
-// Generate random ship positions
-function generateRandomShips() {
-  let ships = new Set();
-  while (ships.size < SHIP_COUNT) {
-    ships.add(Math.floor(Math.random() * GRID_SIZE)); // Random cell in 10x10 grid
-  }
-  return Array.from(ships);
-}
-
-// Create a 10x10 grid and add click listeners
-function createBoard(board) {
-  board.innerHTML = "";
-  for (let i = 0; i < GRID_SIZE; i++) {
-    const cell = document.createElement("div");
-    cell.classList.add("cell");
-    cell.dataset.index = i;
-
-    cell.addEventListener("click", () => handleCellClick(cell, board));
-
-    board.appendChild(cell);
-  }
-}
-
-// Handle cell clicks
-function handleCellClick(cell, board) {
-  if (gameOver || cell.classList.contains("hit") || cell.classList.contains("miss")) return;
-
-  const index = parseInt(cell.dataset.index);
-  const opponentShips = currentPlayer === 1 ? player2Ships : player1Ships;
-
-  if (opponentShips.includes(index)) {
-    cell.classList.add("hit");
-    message.textContent = `Player ${currentPlayer} hit a ship!`;
-    opponentShips.splice(opponentShips.indexOf(index), 1);
-
-    // Check if game over
-    if (opponentShips.length === 0) {
-      gameOver = true;
-      message.textContent = `Player ${currentPlayer} wins!`;
-      return;
+// Initialize boards and add event listeners
+function initializeBoard(boardElement, playerShips) {
+    boardElement.innerHTML = '';
+    for (let i = 0; i < gridSize * gridSize; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.dataset.index = i;
+        boardElement.appendChild(cell);
     }
-  } else {
-    cell.classList.add("miss");
-    message.textContent = `Player ${currentPlayer} missed!`;
-    switchPlayer();
-  }
 }
 
-// Switch player turns
-function switchPlayer() {
-  currentPlayer = currentPlayer === 1 ? 2 : 1;
-  message.textContent = `Player ${currentPlayer}'s turn!`;
+// Function to enable or disable click events based on the current player
+function updateBoardInteractivity() {
+    if (currentPlayer === 1) {
+        setBoardClickable(player1Board, false);  // Disable Player 1's board
+        setBoardClickable(player2Board, true);   // Enable Player 2's board
+    } else {
+        setBoardClickable(player1Board, true);   // Enable Player 1's board
+        setBoardClickable(player2Board, false);  // Disable Player 2's board
+    }
 }
 
-// Restart game
-restartBtn.addEventListener("click", initializeGame);
+// Set board cells as clickable or not
+function setBoardClickable(boardElement, isClickable) {
+    if (isClickable) {
+        boardElement.classList.remove('inactive');
+        boardElement.querySelectorAll('.cell').forEach(cell => {
+            cell.addEventListener('click', cellClickHandler);
+        });
+    } else {
+        boardElement.classList.add('inactive');
+        boardElement.querySelectorAll('.cell').forEach(cell => {
+            cell.removeEventListener('click', cellClickHandler);
+        });
+    }
+}
 
-// Initialize the game when the page loads
-initializeGame();
+// Handle cell click for both players
+function cellClickHandler(event) {
+    const cell = event.target;
+    const opponentShips = currentPlayer === 1 ? player2Ships : player1Ships;
+
+    if (cell.classList.contains('hit') || cell.classList.contains('miss')) {
+        return;  // Ignore already clicked cells
+    }
+
+    const cellIndex = cell.dataset.index;
+    if (opponentShips.includes(Number(cellIndex))) {
+        cell.classList.add('hit');
+        // Stay on the same player's turn since they hit a ship
+    } else {
+        cell.classList.add('miss');
+        // Toggle player only on a miss
+        togglePlayer();
+    }
+}
+
+// Toggle player turn and update board view
+function togglePlayer() {
+    currentPlayer = currentPlayer === 1 ? 2 : 1;
+    updateBoardInteractivity();
+}
+
+// Randomly place ships for players with a random number between 2 and 5
+function placeShipsRandomly(playerShips) {
+    const shipCount = Math.floor(Math.random() * 4) + 2;  // Random number between 2 and 5
+    while (playerShips.length < shipCount) {
+        const randomIndex = Math.floor(Math.random() * gridSize * gridSize);
+        if (!playerShips.includes(randomIndex)) {
+            playerShips.push(randomIndex);
+        }
+    }
+}
+
+// Reset the game
+function resetGame() {
+    player1Ships = [];
+    player2Ships = [];
+    placeShipsRandomly(player1Ships);
+    placeShipsRandomly(player2Ships);
+
+    initializeBoard(player1Board, player1Ships);
+    initializeBoard(player2Board, player2Ships);
+
+    currentPlayer = 1;
+    updateBoardInteractivity();
+}
+
+// Initialize the game
+resetGame();
+resetButton.addEventListener('click', resetGame);

@@ -1,84 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 3rem;
+}
+
+#game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 10px;
+}
+
+.board-container {
+  text-align: center;
+  flex: 1 1 300px; 
+  max-width: 400px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); 
+  grid-template-rows: repeat(10, 1fr);
+  gap: 2px;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1; 
+}
+
+.cell {
+  background-color: lightblue;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  aspect-ratio: 1; 
+}
+
+.cell.hit {
+  background-color: red;
+}
+
+.cell.miss {
+  background-color: gray;
+  opacity: 0.5;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+}
+
+.inactive {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .board-container {
+      flex: 1 1 100%; /* Stacks the boards vertically on smaller screens */
   }
-  
-  h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-  }
-  
-  #game-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .board {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(10, 40px); /* Default for larger screens */
-    grid-template-rows: repeat(10, 40px);
-    gap: 4px;
-  }
-  
+
   .cell {
-    width: 40px;
-    height: 40px;
-    background-color: #87ceeb;
-    border: 1px solid #fff;
-    cursor: pointer;
+      /* Makes the cells smaller on smaller screens */
+      border: 0.5px solid #ddd;
   }
-  
-  /* Hit and Miss Indicators */
-  .cell.hit {
-    background-color: red;
+
+  button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
   }
-  .cell.miss {
-    background-color: #ccc;
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 1.5rem;
   }
-  
-  #message {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #333;
+
+  .board {
+      gap: 1px; /* Reduces gap between cells on very small screens */
   }
-  
-  #restart-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
+
+  button {
+      font-size: 0.8rem;
+      padding: 6px 12px;
   }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(10, 30px); /* Smaller grid cells */
-      grid-template-rows: repeat(10, 30px);
-    }
-    .cell {
-      width: 30px;
-      height: 30px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .grid {
-      grid-template-columns: repeat(10, 20px); /* Even smaller for mobile */
-      grid-template-rows: repeat(10, 20px);
-    }
-    .cell {
-      width: 20px;
-      height: 20px;
-    }
-  }
-  
+}

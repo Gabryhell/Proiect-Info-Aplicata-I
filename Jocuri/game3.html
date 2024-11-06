@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Battleship Game</title>
-  <link rel="stylesheet" href="game3.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship Game</title>
+    <link rel="stylesheet" href="game3.css">
 </head>
 <body>
-
-  <h1>Battleship</h1>
-  <div id="game-container">
-    <div id="player1-board" class="board">
-      <h2>Player 1</h2>
-      <div class="grid"></div>
+    <h1>Battleship</h1>
+    <div id="game-container">
+        <div class="board-container">
+            <div id="player1-board" class="board"></div>
+        </div>
+        <div class="board-container">
+            <div id="player2-board" class="board"></div>
+        </div>
     </div>
-    
-    <div id="player2-board" class="board">
-      <h2>Player 2</h2>
-      <div class="grid"></div>
-    </div>
-  </div>
-
-  <button id="restart-btn">Restart Game</button>
-  <div id="message"></div>
-
-  <script src="game3.js"></script>
+    <button id="reset-button">Reset Game</button>
+    <script src="game3.js"></script>
 </body>
 </html>
