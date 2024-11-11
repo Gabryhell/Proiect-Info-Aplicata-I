@@ -30,6 +30,7 @@ body {
   padding: 20px 27px;
   display: flex;
   justify-content: space-between;
+  user-select: none;
 }
 .play-board {
   height: 100%;
