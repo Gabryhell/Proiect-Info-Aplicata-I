@@ -12,7 +12,7 @@ let player1ShipsRemaining, player2ShipsRemaining;
 
 
 
-const shipLengths = [2, 3, 4];  
+const shipLengths = [2, 3, 3, 4];  
 
 
 function initializeBoard(boardElement) {
