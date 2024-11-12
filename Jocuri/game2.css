@@ -79,7 +79,7 @@ body {
   position: absolute;
   top: 25px;
   left: 50px;
-  z-index: 10; /* Make sure it's above other content */
+  z-index: 10;
 }
 
 .back-button button {
@@ -94,7 +94,7 @@ body {
 }
 
 .back-button button:hover {
-  background-color: #212837; /* Darker shade on hover */
+  background-color: #212837;
 }
 
 @media screen and (max-width: 800px) {
