@@ -33,7 +33,7 @@ h1 {
   padding: 15px 30px;
   border: none;
   border-radius: 5px; 
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
   transition: background-color 0.3s, box-shadow 0.3s;
@@ -43,6 +43,31 @@ h1 {
   background-color: #efcdc1; 
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
 }
+
+.back-button {
+  position: fixed;
+  top: 50px;
+  left: 75px;
+}
+
+.back-button button {
+  padding: 15px 30px;
+  background-color: #e6bbad;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.back-button button:hover {
+  background-color: #efcdc1;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+
 
 .board-container {
   text-align: center;

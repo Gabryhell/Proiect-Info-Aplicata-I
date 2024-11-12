@@ -11,7 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #373021;
+  background: #5d5f55;
 }
 
 .wrapper {
@@ -77,8 +77,8 @@ body {
 
 .back-button {
   position: absolute;
-  top: 25px;
-  left: 50px;
+  top: 50px;
+  left: 75px;
   z-index: 10;
 }
 

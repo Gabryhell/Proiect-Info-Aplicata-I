@@ -26,6 +26,7 @@ function startGame(selectedMode) {
     updateGame();
 }
 
+
 function updateGame() {
     if (keys["w"] && paddle1Y > 0) paddle1Y -= paddleSpeed;
     if (keys["s"] && paddle1Y < game.clientHeight - paddle1.offsetHeight) paddle1Y += paddleSpeed;
@@ -70,6 +71,10 @@ function updateGame() {
     ball.style.top = `${ballY}px`;
 
     requestAnimationFrame(updateGame);
+}
+
+function goBack() {
+    window.history.back();
 }
 
 function resetBall() {

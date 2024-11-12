@@ -144,5 +144,9 @@ function resetGame() {
     updateBoardInteractivity();
 }
 
+function goBack() {
+    window.history.back();
+}
+
 resetGame();
 resetButton.addEventListener('click', resetGame);
