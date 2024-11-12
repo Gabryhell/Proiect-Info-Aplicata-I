@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
 }
+
 body {
   display: flex;
   align-items: center;
@@ -12,6 +13,7 @@ body {
   min-height: 100vh;
   background: #373021;
 }
+
 .wrapper {
   width: 65vmin;
   height: 70vmin;
@@ -23,6 +25,7 @@ body {
   background: #293447;
   box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
 }
+
 .game-details {
   color: #B8C6DC;
   font-weight: 500;
@@ -32,6 +35,7 @@ body {
   justify-content: space-between;
   user-select: none;
 }
+
 .play-board {
   height: 100%;
   width: 100%;
@@ -39,16 +43,20 @@ body {
   background: #212837;
   grid-template: repeat(30, 1fr) / repeat(30, 1fr);
 }
+
 .play-board .food {
   background: #FF003D;
 }
+
 .play-board .head {
   background: #11df33;
 }
+
 .controls {
   display: none;
   justify-content: space-between;
 }
+
 .controls i {
   padding: 25px 0;
   text-align: center;
@@ -58,6 +66,37 @@ body {
   cursor: pointer;
   border-right: 1px solid #171B26;
 }
+
+.show-controls{
+  color: #B8C6DC;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.back-button {
+  position: absolute;
+  top: 25px;
+  left: 50px;
+  z-index: 10; /* Make sure it's above other content */
+}
+
+.back-button button {
+  padding: 20px 40px;
+  background-color: #293447;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button button:hover {
+  background-color: #212837; /* Darker shade on hover */
+}
+
 @media screen and (max-width: 800px) {
   .wrapper {
     width: 90vmin;

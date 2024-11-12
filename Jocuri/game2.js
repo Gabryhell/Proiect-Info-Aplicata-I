@@ -7,9 +7,12 @@ let gameOver = false;
 let foodX, foodY;
 let snakeX = 5, snakeY = 5;
 let velocityX = 0, velocityY = 0;
-let snakeBody = [];
-let setIntervalId;
+let snakeBody = [[5, 5]];
 let score = 0;
+let gameSpeed = 100;
+let lastMoveTime = 0;
+let growSnake = false;
+let directionChanged = false;
 
 let highScore = localStorage.getItem("high-score") || 0;
 highScoreElement.innerText = `High Score: ${highScore}`;
@@ -20,63 +23,95 @@ const updateFoodPosition = () => {
 }
 
 const handleGameOver = () => {
-    clearInterval(setIntervalId);
-    alert("Game Over! Apasa OK pentru a juca din nou.");
+    gameOver = true;
+    alert("Game Over! Click OK to play again.");
     location.reload();
 }
 
-const changeDirection = e => {
-    if(e.key === "ArrowUp" || e.key === "w" && velocityY != 1) {
+const changeDirection = (e) => {
+    if (directionChanged) return;
+
+    if ((e.key === "ArrowUp" || e.key === "w") && velocityY !== 1) {
         velocityX = 0;
         velocityY = -1;
-    } else if(e.key === "ArrowDown" || e.key === "s" && velocityY != -1) {
+        directionChanged = true;
+    } else if ((e.key === "ArrowDown" || e.key === "s") && velocityY !== -1) {
         velocityX = 0;
         velocityY = 1;
-    } else if(e.key === "ArrowLeft" || e.key === "a" && velocityX != 1) {
+        directionChanged = true;
+    } else if ((e.key === "ArrowLeft" || e.key === "a") && velocityX !== 1) {
         velocityX = -1;
         velocityY = 0;
-    } else if(e.key === "ArrowRight" || e.key === "d" && velocityX != -1) {
+        directionChanged = true;
+    } else if ((e.key === "ArrowRight" || e.key === "d") && velocityX !== -1) {
         velocityX = 1;
         velocityY = 0;
+        directionChanged = true;
     }
 }
 
 controls.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
 
-const initGame = () => {
-    if(gameOver) return handleGameOver();
-    let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
+const gameLoop = (currentTime) => {
+    if (gameOver) return;
 
-    if(snakeX === foodX && snakeY === foodY) {
+    if (currentTime - lastMoveTime > gameSpeed) {
+        lastMoveTime = currentTime;
+        initGame();
+    }
+    requestAnimationFrame(gameLoop);
+}
+
+
+const initGame = () => {
+    directionChanged = false;
+
+    snakeX += velocityX;
+    snakeY += velocityY;
+
+    if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
+        handleGameOver();
+        return;
+    }
+    for (let i = 1; i < snakeBody.length; i++) {
+        if (snakeBody[i][0] === snakeX && snakeBody[i][1] === snakeY) {
+            handleGameOver();
+            return;
+        }
+    }
+
+    if (snakeX === foodX && snakeY === foodY) {
         updateFoodPosition();
-        snakeBody.push([foodY, foodX]); // Pushing food position to snake body array
-        score++; // increment score by 1
-        highScore = score >= highScore ? score : highScore;
+        growSnake = true;
+        score++;
+        highScore = Math.max(score, highScore);
         localStorage.setItem("high-score", highScore);
         scoreElement.innerText = `Score: ${score}`;
         highScoreElement.innerText = `High Score: ${highScore}`;
     }
-    snakeX += velocityX;
-    snakeY += velocityY;
-    
-    for (let i = snakeBody.length - 1; i > 0; i--) {
-        snakeBody[i] = snakeBody[i - 1];
-    }
-    snakeBody[0] = [snakeX, snakeY]; 
 
-    if(snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
-        return gameOver = true;
-    }
+    snakeBody.unshift([snakeX, snakeY]);
 
-    for (let i = 0; i < snakeBody.length; i++) {
-        html += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
-        if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
-            gameOver = true;
-        }
+    if (!growSnake) {
+        snakeBody.pop();
+    } else {
+        growSnake = false;
     }
+    renderGame();
+}
+
+const renderGame = () => {
+    let html = `<div class="food" style="grid-area: ${foodY} / ${foodX};"></div>`;
+    snakeBody.forEach((part, index) => {
+        html += `<div class="head" style="grid-area: ${part[1]} / ${part[0]}; transition: all 0.1s ease;"></div>`;
+    });
     playBoard.innerHTML = html;
 }
 
+function goBack() {
+    window.history.back();
+}
+
 updateFoodPosition();
-setIntervalId = setInterval(initGame, 80);
-document.addEventListener("keyup", changeDirection);
+requestAnimationFrame(gameLoop);
+document.addEventListener("keydown", changeDirection);
