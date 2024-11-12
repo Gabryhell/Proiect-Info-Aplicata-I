@@ -32,16 +32,19 @@ body{
     position: relative;
     text-align: center;
     font-family: 'Martyric Personal Use Only', sans-serif;
-    font-size: 55px;
+    font-size: 60px;
     padding: 0;
     border: 0;
     margin: 0;
     background-color: #3f4751;
-    height: 170px;
+    height: 160px;
+    border-bottom: 3px solid;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 .title{
-    font-size: 80px;
+    font-size: 85px;
     position: relative;
     text-align: center;
     font-family: 'Martyric Personal Use Only', sans-serif;  
@@ -49,20 +52,28 @@ body{
     line-height: 100px;
     padding-left: 35px;
     padding-right: 45px;
+    -webkit-text-stroke-width: 1.3px;
+    -webkit-text-stroke-color: black;
 }
+
 
 .logojocuri{
     padding: 0;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    position: relative;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    margin-right: 45px;
+
 }
 
 .logojocuri img{
     vertical-align: middle;
+    margin: 0 90px;
+    border-left: 5px dotted;
+    border-right: 5px dotted;
    
 }
+
 
 .logopong{
     width: 300px;
@@ -70,8 +81,10 @@ body{
 
 .logosnake{
     width: 200px;
+   
+    
 }
 
 .logobattleships{
-    width: 200px;
+    width: 250px;
 }
