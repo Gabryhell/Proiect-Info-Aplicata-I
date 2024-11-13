@@ -109,14 +109,15 @@ body{
     position: fixed;
     text-align: center;
     height: 170px;
-    line-height: 80px;
+    line-height: 70px;
 
 }
 
 .mesajmain h1{
     color: white;
     font-family: 'Martyric Personal Use Only', sans-serif;
-    font-size: 80px;
+    font-size: 65px;
     -webkit-text-stroke-width: 0.7px;
     -webkit-text-stroke-color: #7380FF;
+    word-spacing: 30px;
 }
