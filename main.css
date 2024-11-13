@@ -1,12 +1,25 @@
 @import url('https://fonts.cdnfonts.com/css/martyric-personal-use-only');
+
+html{
+    height: 100%;
+}
 body{
     margin: 0;
     padding: 0;
     user-select: none;
     background-color: #ac73ff;
+    height: 100%;
 }
 
-.navbar ul{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+
+  .navbar ul{
     list-style-type: none;
     padding: 30px;
     border: 0;
@@ -32,12 +45,12 @@ body{
     position: relative;
     text-align: center;
     font-family: 'Martyric Personal Use Only', sans-serif;
-    font-size: 60px;
+    font-size: 5vh;
     padding: 0;
     border: 0;
     margin: 0;
     background-color: #F273FF;
-    height: 160px;
+    height: 15% ;
     border-bottom: 5px dashed white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #7380FF;
@@ -45,31 +58,32 @@ body{
 
 .title{
     color: black;
-    font-size: 85px;
+    font-size: 7vh;
     position: relative;
     text-align: center;
     font-family: 'Martyric Personal Use Only', sans-serif;  
     display: inline-block;
-    line-height: 100px;
+    line-height: 10vh;
     padding-left: 35px;
     padding-right: 45px;
     -webkit-text-stroke-width: 1.3px;
-    -webkit-text-stroke-color: #7380FF;
+    -webkit-text-stroke-color: #ac73ff;
 }
 
 
 .logojocuri{
-    padding: 0;
-    margin-top: 100px;
-    display: flex;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    margin-right: 45px;
+    height: 70%;
+    width: 100%;
 
+    
 }
 
 .logojocuri img{
-    vertical-align: middle;
-    margin: 0 90px;
+    margin-left: 2em;
+    margin-right: 2em;
    
 }
 
@@ -87,17 +101,17 @@ body{
 
 
 .logopong{
-    width: 370px;
+    width: 40vh;
 }
 
 .logosnake{
-    width: 275px;
+    width: 30vh;
    
     
 }
 
 .logobattleships{
-    width: 270px;
+    width: 30vh;
 }
 
 .mesajmain{
@@ -107,17 +121,21 @@ body{
     left: 0;
     right: 0;
     position: fixed;
-    text-align: center;
-    height: 170px;
-    line-height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+    
 
 }
 
 .mesajmain h1{
     color: white;
     font-family: 'Martyric Personal Use Only', sans-serif;
-    font-size: 65px;
+    font-size: 3vw;
     -webkit-text-stroke-width: 0.7px;
     -webkit-text-stroke-color: #7380FF;
-    word-spacing: 30px;
+    word-spacing: 0.3em;
+    margin: 0;
+    padding: 0;
 }
