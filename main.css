@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 0;
     user-select: none;
-    background-color: #55606E;
+    background-color: #ac73ff;
 }
 
 .navbar ul{
@@ -19,7 +19,7 @@ body{
 .navbar ul li{
     display: inline-block;
     position: relative;
-    color: #8827c0;
+    color: white;
     margin-bottom: 15px;
     margin-left: 0px;
     margin-right: 0px;
@@ -36,14 +36,15 @@ body{
     padding: 0;
     border: 0;
     margin: 0;
-    background-color: #3f4751;
+    background-color: #F273FF;
     height: 160px;
-    border-bottom: 3px solid;
+    border-bottom: 5px dashed white;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: #7380FF;
 }
 
 .title{
+    color: black;
     font-size: 85px;
     position: relative;
     text-align: center;
@@ -53,7 +54,7 @@ body{
     padding-left: 35px;
     padding-right: 45px;
     -webkit-text-stroke-width: 1.3px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: #7380FF;
 }
 
 
@@ -69,22 +70,53 @@ body{
 .logojocuri img{
     vertical-align: middle;
     margin: 0 90px;
-    border-left: 5px dotted;
-    border-right: 5px dotted;
    
+}
+
+.logopong:hover{
+    transform: scale(1.1);
+}
+
+.logosnake:hover{
+    transform: scale(1.1);
+}
+
+.logobattleships:hover{
+    transform: scale(1.1);
 }
 
 
 .logopong{
-    width: 300px;
+    width: 370px;
 }
 
 .logosnake{
-    width: 200px;
+    width: 275px;
    
     
 }
 
 .logobattleships{
-    width: 250px;
+    width: 270px;
+}
+
+.mesajmain{
+    background-color:#F273FF ;
+    border-top: 5px dashed white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    text-align: center;
+    height: 170px;
+    line-height: 80px;
+
+}
+
+.mesajmain h1{
+    color: white;
+    font-family: 'Martyric Personal Use Only', sans-serif;
+    font-size: 80px;
+    -webkit-text-stroke-width: 0.7px;
+    -webkit-text-stroke-color: #7380FF;
 }
