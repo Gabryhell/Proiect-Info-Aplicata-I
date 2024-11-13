@@ -126,11 +126,13 @@ body {
 
 .show-controls{
     position: relative;
+    text-align: center;
+    top: 95%;
+    user-select: none;
 }
 
 .show-controls p {
     color: #B8C6DC;
-    text-align: center;
     font-weight: 500;
     font-size: 1.2rem;
     user-select: none;
