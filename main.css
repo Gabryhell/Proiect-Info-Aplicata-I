@@ -17,9 +17,7 @@ body{
     box-sizing: border-box;
   }
 
-
-
-  .navbar ul{
+.navbar ul{
     list-style-type: none;
     padding: 30px;
     border: 0;
@@ -69,8 +67,6 @@ body{
     -webkit-text-stroke-color: #7380FF;
 }
 
-
-
 .logojocuri{
     display: inline-flex;
     align-items: center;
@@ -99,15 +95,12 @@ body{
     transform: scale(1.1);
 }
 
-
 .logopong{
     width: 40vh;
 }
 
 .logosnake{
     width: 30vh;
-   
-    
 }
 
 .logobattleships{
@@ -125,8 +118,6 @@ body{
     align-items: center;
     justify-content: center;
     height: 17.5%;
-    
-
 }
 
 .mesajmain h1{
