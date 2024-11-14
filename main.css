@@ -33,9 +33,8 @@ body{
     display: inline-block;
     position: relative;
     color: white;
-    margin-bottom: 15px;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
     padding-bottom: 0;
     vertical-align: top;
    
@@ -45,20 +44,20 @@ body{
     position: relative;
     text-align: center;
     font-family: 'Martyric Personal Use Only', sans-serif;
-    font-size: 5vh;
+    font-size: 6vh;
     padding: 0;
     border: 0;
     margin: 0;
     background-color: #F273FF;
-    height: 15% ;
+    height: 17% ;
     border-bottom: 5px dashed white;
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: #7380FF;
 }
 
 .title{
     color: black;
-    font-size: 7vh;
+    font-size: 9vh;
     position: relative;
     text-align: center;
     font-family: 'Martyric Personal Use Only', sans-serif;  
@@ -66,24 +65,25 @@ body{
     line-height: 10vh;
     padding-left: 35px;
     padding-right: 45px;
-    -webkit-text-stroke-width: 1.3px;
-    -webkit-text-stroke-color: #ac73ff;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #7380FF;
 }
+
 
 
 .logojocuri{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 70%;
+    height: 66.5%;
     width: 100%;
 
     
 }
 
 .logojocuri img{
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-right: 3vh;
+    margin-left: 3vh;
    
 }
 
@@ -124,7 +124,7 @@ body{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 15%;
+    height: 17.5%;
     
 
 }
@@ -133,9 +133,14 @@ body{
     color: white;
     font-family: 'Martyric Personal Use Only', sans-serif;
     font-size: 3vw;
-    -webkit-text-stroke-width: 0.7px;
+    -webkit-text-stroke-width: 1.3px;
     -webkit-text-stroke-color: #7380FF;
     word-spacing: 0.3em;
     margin: 0;
     padding: 0;
+}
+
+.mesajmain img{
+    width: 12vh;
+    margin: 2vh;
 }
