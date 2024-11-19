@@ -5,7 +5,11 @@
 }
 
 body {
-    background: #343434;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ac73ff;
     color: #fff;
     font-family: Arial, sans-serif;
 }

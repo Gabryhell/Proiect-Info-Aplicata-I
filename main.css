@@ -17,9 +17,7 @@ body{
     box-sizing: border-box;
   }
 
-
-
-  .navbar ul{
+.navbar ul{
     list-style-type: none;
     padding: 30px;
     border: 0;
@@ -33,9 +31,8 @@ body{
     display: inline-block;
     position: relative;
     color: white;
-    margin-bottom: 15px;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
     padding-bottom: 0;
     vertical-align: top;
    
@@ -45,20 +42,20 @@ body{
     position: relative;
     text-align: center;
     font-family: 'Martyric Personal Use Only', sans-serif;
-    font-size: 5vh;
+    font-size: 6vh;
     padding: 0;
     border: 0;
     margin: 0;
     background-color: #F273FF;
-    height: 15% ;
+    height: 17% ;
     border-bottom: 5px dashed white;
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: #7380FF;
 }
 
 .title{
     color: black;
-    font-size: 7vh;
+    font-size: 9vh;
     position: relative;
     text-align: center;
     font-family: 'Martyric Personal Use Only', sans-serif;  
@@ -66,52 +63,60 @@ body{
     line-height: 10vh;
     padding-left: 35px;
     padding-right: 45px;
-    -webkit-text-stroke-width: 1.3px;
-    -webkit-text-stroke-color: #ac73ff;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #7380FF;
 }
-
 
 .logojocuri{
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 70%;
-    width: 100%;
-
-    
-}
-
-.logojocuri img{
-    margin-left: 2em;
-    margin-right: 2em;
+    height: 66.5%;
+    width: 94%;
+    margin-right: 2vh;
    
 }
 
 .logopong:hover{
-    transform: scale(1.1);
+    transform: scale(1.15);
+    background-color: #893bff;
 }
 
 .logosnake:hover{
-    transform: scale(1.1);
+    transform: scale(1.15);
+    background-color: #893bff;
 }
 
 .logobattleships:hover{
-    transform: scale(1.1);
+    transform: scale(1.15);
+    background-color: #893bff;
 }
 
-
 .logopong{
-    width: 40vh;
+    width: 51vh;
+    padding-top: 17vh;
+    padding-bottom: 16.5vh;
+    padding-left: 4vh;
+    padding-right: 4vh;
+   
 }
 
 .logosnake{
-    width: 30vh;
+    width: 38vh;
+    padding-top: 14.5vh;
+    padding-bottom: 14vh;
+    padding-left: 3.5vh;
+    padding-right: 4vh;
    
-    
 }
 
 .logobattleships{
-    width: 30vh;
+    width: 40vh;
+    padding-top: 13vh;
+    padding-bottom: 12.5vh;
+    padding-left: 4vh;
+    padding-right: 4vh;
+   
 }
 
 .mesajmain{
@@ -124,18 +129,22 @@ body{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 15%;
-    
-
+    height: 17.5%;
 }
 
 .mesajmain h1{
     color: white;
     font-family: 'Martyric Personal Use Only', sans-serif;
-    font-size: 3vw;
-    -webkit-text-stroke-width: 0.7px;
+    font-size: 6vh;
+    -webkit-text-stroke-width: 1.3px;
     -webkit-text-stroke-color: #7380FF;
     word-spacing: 0.3em;
     margin: 0;
     padding: 0;
+}
+
+.mesajmain span{
+    font-size: 11vh;
+    padding: 0 0 3vh 0;
+    margin: 0;
 }
