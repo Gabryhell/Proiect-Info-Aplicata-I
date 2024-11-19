@@ -5,16 +5,14 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background: #343434;
     color: #fff;
     font-family: Arial, sans-serif;
 }
 
 #menu {
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
