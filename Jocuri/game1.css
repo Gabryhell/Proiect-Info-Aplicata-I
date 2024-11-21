@@ -64,6 +64,8 @@ body {
 }
 
 #menu {
+    justify-content: center;
+    align-items: center;
     text-align: center;
     display: flex;
     flex-direction: column;
