@@ -80,6 +80,10 @@ body{
 .logopong:hover{
     transform: scale(1.15);
     background-color: #893bff;
+    padding-top: 14.5vh;
+    padding-bottom: 16.5vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
 }
 
 .logosnake:hover{
@@ -90,6 +94,7 @@ body{
 .logobattleships:hover{
     transform: scale(1.15);
     background-color: #893bff;
+    
 }
 
 .logopong{
