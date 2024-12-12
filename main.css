@@ -1,11 +1,11 @@
 @font-face { 
     font-family: quinn-rounded; 
-    src: url('quinn-rounded-7.ttf'); 
+    src: url('FontFolder/quinn-rounded-7.ttf'); 
 }
 
 @font-face { 
     font-family: boya-bold; 
-    src: url('BOYA\ BOLD.ttf'); 
+    src: url('FontFolder/BOYA\ BOLD.ttf'); 
 }
 
 
