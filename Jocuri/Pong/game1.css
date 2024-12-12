@@ -1,3 +1,8 @@
+@font-face { 
+    font-family: boya-bold; 
+    src: url('FontFolder/BOYA\ BOLD.ttf'); 
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #ac73ff;
+    background: #000000;
     color: #fff;
     font-family: Arial, sans-serif;
 }
@@ -20,28 +25,29 @@ body {
     text-align: center;
 }
 
-#menu h1 {
-    font-size: 36px;
+#menu-logo{
+    width: 300px;
+    height: auto;
     margin-bottom: 20px;
     user-select: none;
 }
 
 #menu button {
-    font-size: 20px;
-    padding: 10px 20px;
-    margin: 10px;
+    font-family: boya-bold;
+    font-size: 25px;
+    padding: 20px 40px;
+    margin: 15px;
     cursor: pointer;
-    background: #555;
-    color: #fff;
+    background: #ffffff;
+    color: #000000;
     border: none;
     border-radius: 5px;
-    transition: background 0.3s, transform 0.2s; /* Add transition for smooth hover */
+    transition: background 0.3s, transform 0.2s;
 }
 
-/* Hover Effect */
 #menu button:hover {
     background: #777;
-    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    transform: scale(1.1);
 }
 
 #game {
