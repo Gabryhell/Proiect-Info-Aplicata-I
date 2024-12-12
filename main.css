@@ -3,6 +3,11 @@
     src: url('quinn-rounded-7.ttf'); 
 }
 
+@font-face { 
+    font-family: boya-bold; 
+    src: url('BOYA\ BOLD.ttf'); 
+}
+
 
 html{
     height: 100%;
@@ -34,7 +39,7 @@ body{
 .navbar ul li{
     display: inline-block;
     position: relative;
-    color: white;
+    color: rgb(0, 0, 0);
     margin-left: 0;
     margin-right: 0;
     padding-bottom: 0;
@@ -46,23 +51,22 @@ body{
     position: relative;
     text-align: center;
     font-family: 'quinn-rounded', sans-serif;
-    font-size: 6vh;
+    font-size: 5vh;
     padding: 0;
     border: 0;
     margin: 0;
-    background-color: #c2c2c2;
+    background-color: #e8e8e8;
     height: 17% ;
-    border-bottom: 5px dashed white;
     -webkit-text-stroke-width: 1.8px;
     -webkit-text-stroke-color: #000000;
 }
 
 .title{
-    color: black;
-    font-size: 9vh;
+    color: rgb(0, 0, 0);
+    font-size: 17vh;
     position: relative;
     text-align: center;
-    font-family: 'quinn-rounded', sans-serif;  
+    font-family: 'boya-bold', sans-serif;  
     display: inline-block;
     line-height: 10vh;
     padding-left: 35px;
@@ -83,7 +87,7 @@ body{
 
 .logopong:hover{
     transform: scale(1.15);
-    background-color: #893bff;
+    background-color: #df8f8f;
     padding-top: 14.5vh;
     padding-bottom: 16.5vh;
     padding-left: 2vh;
@@ -92,12 +96,12 @@ body{
 
 .logosnake:hover{
     transform: scale(1.15);
-    background-color: #893bff;
+    background-color: #df8f8f;
 }
 
 .logobattleships:hover{
     transform: scale(1.15);
-    background-color: #893bff;
+    background-color: #df8f8f;
     
 }
 
@@ -129,8 +133,7 @@ body{
 }
 
 .mesajmain{
-    background-color:#c2c2c2;
-    border-top: 5px dashed white;
+    background-color:#e8e8e8;
     bottom: 0;
     left: 0;
     right: 0;
@@ -142,9 +145,9 @@ body{
 }
 
 .mesajmain h1{
-    color: white;
-    font-family: 'quinn-rounded', sans-serif;
-    font-size: 6vh;
+    color: rgb(0, 0, 0);
+    font-family: 'boya-bold', sans-serif;
+    font-size: 12vh;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000000;
     word-spacing: 0.3em;
