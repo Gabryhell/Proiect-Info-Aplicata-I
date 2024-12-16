@@ -1,10 +1,17 @@
+.bangers-regular {
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background: #daffe8;
-  font-family: Arial, sans-serif;
+  background: #fff3e5;
+  font-family: 'bangers-regular';
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,6 +36,7 @@ h1 {
 
 #reset-button {
   background-color: #e6bbad; 
+  font-family: 'bangers-regular';
   color: rgb(0, 0, 0); 
   padding: 15px 30px;
   border: none;
@@ -53,6 +61,7 @@ h1 {
 .back-button button {
   padding: 15px 30px;
   background-color: #e6bbad;
+  font-family: 'bangers-regular';
   color: rgb(0, 0, 0);
   font-size: 20px;
   border: none;
