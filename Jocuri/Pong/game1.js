@@ -1,4 +1,5 @@
 const game = document.getElementById("game");
+const controls = document.getElementById("show-controls")
 const paddle1 = document.getElementById("paddle1");
 const paddle2 = document.getElementById("paddle2");
 const ball = document.getElementById("ball");
@@ -23,6 +24,7 @@ function startGame(selectedMode) {
     gameMode = selectedMode;
     menu.style.display = "none";
     game.style.display = "block";
+    controls.style.display = "block";
     updateGame();
 }
 
