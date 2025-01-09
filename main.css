@@ -160,3 +160,16 @@ body{
     padding: 0 0 3vh 0;
     margin: 0;
 }
+
+@media screen and (max-width: 900px){
+    .navbar{
+        display: none;
+    }
+    .mesajmain{
+        display: none;
+    }
+    .logojocuri{
+        height: 175%;
+        flex-direction: column;
+    }
+}
